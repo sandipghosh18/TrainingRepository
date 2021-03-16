@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+     <style type="text/css">
+        table,tr,td{
+          border: 1px solid black;
+          background-color: lightblue;
+
+          margin-left: auto;
+          margin-right: auto;
+         }
+
+h1{
+text-align: center;
+}
+
+
+     </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Candidate Information</h1>
+<div id="student-form">
+	
+	
+	<table border="1" style="background-color: skyblue">
+		<form>
+     <tr>
+     	<td>Name: <span style="color: red">*</span></td>
+     	<td><input type="text" name="" maxlength="15" required></td>
+     </tr>
+
+     <tr>
+     	<td>Password: <span style="color: red">*</span></td>
+     	<td><input type="Password" name="" maxlength="15" required></td>
+     </tr>
+
+     <tr>
+     	<td>Phone number: <span style="color: red">*</span></td>
+     	<td><input type="number" name="" maxlength="10" required></td>
+     </tr>
+
+     <tr>
+     	<td>Gender: <span style="color: red">*</span></td>
+     	<td><input type="radio" name="">Male
+     		<input type="radio" name="">Female
+     	</td>
+     </tr>
+     <tr>
+     	<td>Date of Birth: <span style="color: red">*</span></td>
+     	<td><input type="Date" name="" required></td>
+     </tr>
+
+     <tr>
+     	<td>Email: <span style="color: red">*</span></td>
+     	<td><input type="Email" name=""></td>
+     </tr>
+
+     <tr>
+     	<td>Highest Qualification: <span style="color: red">*</span></td>
+     	<td><select required>
+     		<option>Select Highest Qualification</option>
+     		<option>B.SC</option>
+     	</select></td>
+     </tr>
+     <tr>
+          <td>Courses Interested in.<span style="color: red">*</span></td>
+          <td>Java<input type="checkbox" name="">HTML5<input type="checkbox" name="">CSS 3<input type="checkbox" name="">
+               Angular JS<input type="checkbox" name="">JQuery<input type="checkbox" name=""></td>
+     </tr>
+
+     <tr>
+     	<td>Comments: (Mention External Certifications if any)</td>
+     	<td><textarea></textarea></td>
+     </tr>
+     <tr>
+          <td>Upload Degree/Enternal Certificates:<span style="color: red">*</span></td>
+          <td><input type="file" name="file"></td>
+     </tr>
+     <tr>
+          <td></td>
+          <td><input type="submit" name="submit" value="Submit information">&nbsp;<input type="reset" name="reset" value="Clear"></td>
+     </tr>
+</form>
+	</table>
+     <p  style="color: red;text-align: center;" >All fields marked(*) are mandatory</p>
+</div>
+
+</body>
+</html>
