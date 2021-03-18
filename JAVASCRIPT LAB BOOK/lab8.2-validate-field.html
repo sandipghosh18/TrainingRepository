@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+background-color: #3399ff;
+}
+
+h1{
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.container{
+position: fixed;
+left: 20%;
+right: 20%;
+top: 20%;
+bottom: 20%;
+background-color: white;
+}
+
+.innerPart{
+position: fixed;
+left:25%;
+right: 25%;
+top: 30%;
+bottom: 30%;
+background-color: #3399ff;
+}
+
+td{
+font-size: 20px;
+}
+
+.styleSelect{
+font-size: 20px;
+}
+</style>
+<title></title>
+</head>
+
+<body>
+<h1>Product Details</h1>
+
+<div class="container">
+<div class="innerPart">
+
+<form>
+<center>
+<table>
+<tr>
+<td>Category:
+<td><select id="select1" name="select1" onchange="populate(this.id, 'select2')">
+<option></option>
+<option class="styleSelect" value="elec">Electronics</option>
+<option class="styleSelect" value="groc">Grocery</option>
+</select></td>
+</tr><br>
+
+<tr>
+<td>Product:</td>
+<td><select id="select2" name="select2" style="font-size: 20px;"></select></td>
+</tr><br>
+
+<tr>
+<td>Quantity:</td>
+<td><input type="number" id="quant"></td>
+</tr><br>
+
+<tr>
+<td>Total Price:</td>
+<td><input type="number" id="price"></td>
+</tr>
+
+<tr>
+<td><button type="submit" onclick="calTotal()">Submit</td>
+<td><input type="reset"></td>
+</tr>
+
+</table>
+</center>
+</form>
+
+</div>
+</div>
+
+<script type="text/javascript">
+function calTotal(){
+var val = document.getElementById("select2").value;
+var price = 0;
+
+if(val=="television"){
+price = 20000;
+}
+else if(val=="laptop"){
+price = 30000;
+}
+else if(val=="phone"){
+price = 10000;
+}
+else if(val=="soap"){
+price = 40;
+}
+else{
+price: 90;
+}
+
+var q = document.getElementById("quant").value;
+var qty = Number(q);
+
+document.getElementById("price").value = qty*price;
+}
+</script>
+
+<script type="text/javascript">
+function populate(s1,s2){
+var s1 = document.getElementById(s1);
+var s2 = document.getElementById(s2);
+
+// set s2 to empty
+s2.innerHTML = "";
+
+if(s1.value=="elec"){
+// value|label
+var optionArray = ["|","television|Television","laptop|Laptop","product|Product"];
+}
+else{
+var optionArray = ["|","soap|Soap","powder|Powder"];
+}
+
+for(var option in optionArray){
+var pair = optionArray[option].split("|");
+var newOption = document.createElement("option");
+newOption.value = pair[0];
+newOption.innerHTML = pair[1];
+s2.options.add(newOption);
+}
+}
+</script>
+</body>
+</html>
